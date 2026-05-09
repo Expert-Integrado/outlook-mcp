@@ -1,7 +1,7 @@
 {
   "name": "@expertintegrado/outlook-mcp",
   "version": "1.0.0",
-  "description": "Servidor MCP para integracao com Microsoft 365 (Outlook + Calendario + OneDrive). Autenticacao via Device Code Flow, sem precisar registrar app no Azure. Funciona com qualquer cliente MCP (Claude Code, Claude Desktop, etc.).",
+  "description": "Servidor MCP oficial da Expert Integrado para Microsoft 365 (Outlook + Calendário + OneDrive). Autenticação via Device Code Flow com app pré-registrado — nenhuma configuração no Azure necessária.",
   "type": "module",
   "main": "index.js",
   "bin": {
