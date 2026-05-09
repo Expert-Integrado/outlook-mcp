@@ -1,0 +1,54 @@
+{
+  "name": "@expertintegrado/outlook-mcp",
+  "version": "1.0.0",
+  "description": "Servidor MCP para integracao com Microsoft 365 (Outlook + Calendario + OneDrive). Autenticacao via Device Code Flow, sem precisar registrar app no Azure. Funciona com qualquer cliente MCP (Claude Code, Claude Desktop, etc.).",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "outlook-mcp": "index.js"
+  },
+  "files": [
+    "index.js",
+    "src/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "outlook",
+    "microsoft365",
+    "office365",
+    "calendar",
+    "onedrive",
+    "claude",
+    "claude-code",
+    "anthropic",
+    "expert-integrado"
+  ],
+  "author": "Expert Integrado",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expertintegrado/outlook-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/expertintegrado/outlook-mcp/issues"
+  },
+  "homepage": "https://github.com/expertintegrado/outlook-mcp#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^3.8.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.0.0"
+  }
+}

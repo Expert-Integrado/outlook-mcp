@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "outlook": {
+      "command": "npx",
+      "args": ["-y", "@expertintegrado/outlook-mcp"],
+      "env": {
+        "OUTLOOK_TIMEZONE": "America/Sao_Paulo"
+      }
+    }
+  }
+}

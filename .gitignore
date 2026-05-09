@@ -1,0 +1,17 @@
+node_modules/
+package-lock.json
+*.log
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# Token e estado local — nunca commitar
+.token-cache.json
+.rate-limit.json
+*.local.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
