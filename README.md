@@ -30,12 +30,19 @@ Siga esta sequência:
      -e OUTLOOK_TIMEZONE=America/Sao_Paulo \
      -- npx -y @expertintegrado/outlook-mcp
 
-2. Confirme que o comando rodou sem erro e me avise pra encerrar
+2. Baixe e leia a documentação completa do MCP rodando:
+
+   npm view @expertintegrado/outlook-mcp readme
+
+   Use esse conteúdo como contexto — não precisa me mostrar o
+   README inteiro, só absorver internamente.
+
+3. Confirme que o comando rodou sem erro e me avise pra encerrar
    e reabrir o Claude Code pra ativar o MCP.
 
-3. Depois que eu reabrir, peça pra eu rodar o comando de
-   autenticação (sem precisar de token — o login é feito pelo
-   navegador na minha conta Microsoft 365).
+4. Depois que eu reabrir, guie-me pelo processo de autenticação
+   (sem precisar de token — o login é feito pelo navegador na
+   minha conta Microsoft 365).
 ````
 
 O Claude Code vai:
