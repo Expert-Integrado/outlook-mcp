@@ -4,6 +4,13 @@ Todas as mudanças notáveis deste projeto serão documentadas aqui.
 
 O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.0.1] — 2026-05-11
+
+### Corrigido
+
+- Prompt de instalação no README agora inclui `npm view @expertintegrado/outlook-mcp readme` para o Claude carregar o contexto do MCP na sessão de instalação
+- Workflow `release.yml` agora inclui `workflow_dispatch` para re-disparar publicação manualmente quando necessário
+
 ## [1.0.0] — 2026-05-09
 
 ### Adicionado
