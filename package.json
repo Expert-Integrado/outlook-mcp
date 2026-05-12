@@ -1,6 +1,6 @@
 {
   "name": "@expertintegrado/outlook-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Servidor MCP oficial da Expert Integrado para Microsoft 365 (Outlook + Calendário + OneDrive). Autenticação via Device Code Flow com app pré-registrado — nenhuma configuração no Azure necessária.",
   "type": "module",
   "main": "index.js",
