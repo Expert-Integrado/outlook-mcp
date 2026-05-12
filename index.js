@@ -126,7 +126,7 @@ registerTool(
 
 registerTool(
   "mover_email",
-  "Move um e-mail para uma pasta específica do Outlook. Cria a pasta automaticamente se não existir.",
+  "Move um e-mail para uma pasta específica do Outlook. Cria a pasta automaticamente se não existir. Atenção: o Graph API gera um novo ID para o e-mail após a movimentação — use ler_emails na pasta de destino para obter o ID atualizado.",
   moveEmailSchema,
   moveEmail,
   "mover e-mail"

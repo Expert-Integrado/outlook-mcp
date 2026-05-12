@@ -8,7 +8,7 @@ import { graphRequest, graphRequestPaginated } from "../graph.js";
 export const moveEmailSchema = z.object({
   email_id: z
     .string()
-    .describe("ID do e-mail a mover (retornado por ler_emails)"),
+    .describe("ID do e-mail a mover (retornado por ler_emails). Atenção: após a movimentação o e-mail recebe um novo ID — use ler_emails na pasta de destino para obtê-lo."),
   pasta_destino: z
     .string()
     .describe("Nome da pasta de destino. Ex: 'Processados', 'Leads', 'Arquivo'. A pasta será criada automaticamente se não existir."),

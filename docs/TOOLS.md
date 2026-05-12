@@ -21,7 +21,7 @@ Lista completa das 29 ferramentas registradas pelo MCP. Os parâmetros completos
 | `responder_email` | Responde mantendo threading. Pode responder ao remetente ou a todos. |
 | `encaminhar_email` | Encaminha e-mail com comentário opcional. |
 | `marcar_email` | Marca como lido ou não lido. |
-| `mover_email` | Move pra outra pasta. Cria pasta automaticamente se não existir. |
+| `mover_email` | Move pra outra pasta. Cria pasta automaticamente se não existir. **Atenção:** o ID do e-mail muda após a movimentação — use `ler_emails` na pasta destino para obter o novo ID. |
 | `baixar_anexo` | Baixa anexo de e-mail pra disco local. |
 | `criar_rascunho_email` | Cria rascunho na pasta Rascunhos (não envia). |
 | `listar_pastas_email` | Lista as pastas de e-mail (Inbox, Sent, etc), opcionalmente com subpastas. |
