@@ -4,6 +4,12 @@ Todas as mudanças notáveis deste projeto serão documentadas aqui.
 
 O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.0.2] — 2026-05-11
+
+### Corrigido
+
+- `ler_emails` agora exibe o ID de **todos** os e-mails, não apenas dos que têm anexo. Isso permite usar `marcar_email`, `mover_email`, `encaminhar_email` e `baixar_anexo` em qualquer mensagem
+
 ## [1.0.1] — 2026-05-11
 
 ### Corrigido
