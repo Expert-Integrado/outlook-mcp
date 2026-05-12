@@ -4,6 +4,16 @@ Todas as mudanças notáveis deste projeto serão documentadas aqui.
 
 O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.0.3] — 2026-05-11
+
+### Mudou
+
+- `mover_email`: adicionado aviso na descrição da tool e no schema Zod informando que o Graph API gera um novo ID para o e-mail após movimentação — é necessário usar `ler_emails` na pasta de destino para obter o ID atualizado
+
+### Documentação
+
+- `docs/TOOLS.md`: `mover_email` agora documenta o comportamento de regeação de ID
+
 ## [1.0.2] — 2026-05-11
 
 ### Corrigido
