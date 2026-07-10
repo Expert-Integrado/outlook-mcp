@@ -33,14 +33,14 @@ Lista completa das 29 ferramentas registradas pelo MCP. Os parâmetros completos
 
 | Ferramenta | O que faz |
 |---|---|
-| `criar_compromisso` | Cria evento. Aceita lista de participantes, local, descrição, online (Teams). Limite 10/h. |
+| `criar_compromisso` | Cria evento. Aceita lista de convidados, local (ou link de reunião), descrição, dia inteiro. Não cria reunião Teams automática. Limite 10/h. |
 | `listar_compromissos` | Lista eventos por período. |
 | `atualizar_compromisso` | Atualiza título, horário, local, descrição, disponibilidade. Busca pelo título e data. |
 | `deletar_compromisso` | Deleta evento (sem notificar participantes). Para cancelar avisando, use `cancelar_compromisso`. Exige `confirmacao: true`. |
 | `aceitar_evento` | Aceita convite recebido. Pode incluir comentário pro organizador. |
 | `recusar_evento` | Recusa convite. Pode propor horário alternativo via `proposta_horario` + `proposta_duracao_minutos`. |
 | `cancelar_compromisso` | Cancela evento que VOCÊ organizou e notifica os participantes. Diferente de `deletar`. |
-| `verificar_disponibilidade` | Encontra horários livres em comum entre múltiplas pessoas (findMeetingTimes API). |
+| `verificar_disponibilidade` | Encontra horários livres em comum entre múltiplas pessoas (getSchedule API, janela máxima de 62 dias). |
 
 ---
 

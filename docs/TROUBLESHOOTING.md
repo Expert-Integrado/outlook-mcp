@@ -107,7 +107,7 @@ Por padrão usamos escopo `organization` (só pessoas da empresa). Para link pú
 
 ### `verificar_disponibilidade`: retornou vazio mesmo com horários livres
 
-Algumas configurações de calendário restringem `findMeetingTimes` para pessoas fora da sua empresa. Tente apenas com colegas do mesmo tenant primeiro.
+Algumas configurações de calendário restringem o `getSchedule` (consulta de disponibilidade) para pessoas fora da sua empresa. Tente apenas com colegas do mesmo tenant primeiro.
 
 ### Horários aparecem em fuso errado
 
@@ -126,7 +126,7 @@ Reinicie o Claude Code.
 
 ## Onde reportar bugs
 
-Se nada aqui resolveu: [abra uma issue](https://github.com/expertintegrado/outlook-mcp/issues/new/choose) com:
+Se nada aqui resolveu: [abra uma issue](https://github.com/Expert-Integrado/outlook-mcp/issues/new/choose) com:
 
 - Versão do Node.js (`node --version`)
 - Versão do MCP (`npm view @expertintegrado/outlook-mcp version`)

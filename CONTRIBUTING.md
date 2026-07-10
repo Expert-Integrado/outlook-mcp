@@ -89,4 +89,4 @@ gh pr create --fill
 
 - Instalação / erros de runtime: [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
 - Publicação de versão nova: [RELEASING.md](RELEASING.md)
-- Outras: [abra uma issue](https://github.com/expertintegrado/outlook-mcp/issues/new/choose)
+- Outras: [abra uma issue](https://github.com/Expert-Integrado/outlook-mcp/issues/new/choose)

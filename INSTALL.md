@@ -2,11 +2,14 @@
 
 O Outlook MCP é distribuído como pacote npm público: [`@expertintegrado/outlook-mcp`](https://www.npmjs.com/package/@expertintegrado/outlook-mcp). O método recomendado é o **Modo 1 (npx)** — sem download, sem clone, sem caminho absoluto. Os modos alternativos são para quem está offline, quer dev/fork, ou precisa de setup sem internet para instalar do registry.
 
+> Prefere não fazer nada disso na mão? O [README](README.md#passo-2--peça-pro-claude-code-instalar) tem um prompt colável que faz o Claude Code conduzir a instalação inteira por você — inclusive as etapas de navegador.
+
 - [Pré-requisitos](#pré-requisitos)
 - [Modo 1 — npx (recomendado)](#modo-1--npx-recomendado)
 - [Modo 2 — ZIP (sem git, instalação local)](#modo-2--zip-sem-git-instalação-local)
 - [Modo 3 — git clone (dev / atualização via `git pull`)](#modo-3--git-clone-dev--atualização-via-git-pull)
 - [Autenticação Microsoft 365](#autenticação-microsoft-365)
+- [Registrar um app próprio no Microsoft Entra (opcional)](#registrar-um-app-próprio-no-microsoft-entra-opcional)
 - [Variáveis de ambiente](#variáveis-de-ambiente)
 - [Atualizando o MCP](#atualizando-o-mcp)
 
@@ -105,7 +108,7 @@ Use quando:
 
 ### Passos
 
-1. Baixe o ZIP: [outlook-mcp-main.zip](https://github.com/expertintegrado/outlook-mcp/archive/refs/heads/main.zip)
+1. Baixe o ZIP: [outlook-mcp-main.zip](https://github.com/Expert-Integrado/outlook-mcp/archive/refs/heads/main.zip)
 2. Descompacte numa pasta estável.
 3. Abra um terminal **dentro dessa pasta** e rode:
    ```bash
@@ -138,7 +141,7 @@ Use quando:
 ## Modo 3 — git clone (dev / atualização via `git pull`)
 
 ```bash
-git clone https://github.com/expertintegrado/outlook-mcp.git
+git clone https://github.com/Expert-Integrado/outlook-mcp.git
 cd outlook-mcp
 npm install
 ```
@@ -174,6 +177,47 @@ Remove-Item "$env:USERPROFILE\.expertintegrado\outlook-mcp\token-cache.json"
 ```
 
 Depois peça "autentica" de novo no Claude.
+
+---
+
+## Registrar um app próprio no Microsoft Entra (opcional)
+
+Por padrão o MCP usa o app público pré-registrado pela Expert (`Expert Integrado Outlook MCP`, client ID `b044cdc1-5c75-4c25-be87-46e51f036ae6`, multi-tenant) — **não precisa fazer nada desta seção**. Registre um app próprio apenas se:
+
+- A política da sua empresa **bloqueia apps de terceiros** (e o admin não quer aprovar o app da Expert), ou
+- Você quer controle total do app no seu próprio tenant.
+
+> Esta é uma etapa de navegador. Se estiver no fluxo assistido do README, o Claude se oferece pra navegar e preencher por você — você só faz o login.
+
+### Passo a passo
+
+1. Acesse [https://entra.microsoft.com](https://entra.microsoft.com) (ou [https://portal.azure.com](https://portal.azure.com) → Microsoft Entra ID) e faça login como admin do tenant.
+2. **App registrations** → **New registration**:
+   - **Name:** o que preferir (ex: `Outlook MCP - Minha Empresa`)
+   - **Supported account types:** "Accounts in this organizational directory only" (single-tenant) — ou multi-tenant, se quiser aceitar outras contas
+   - **Redirect URI:** deixe **em branco** — o Device Code Flow não usa redirect URI
+3. Com o app criado, abra **Authentication** → em **Advanced settings**, marque **Allow public client flows = Yes** → Save. Sem isso o Device Code Flow falha.
+4. Abra **API permissions** → **Add a permission** → **Microsoft Graph** → **Delegated permissions** e adicione exatamente os escopos que o MCP usa:
+   - `Mail.Send`, `Mail.ReadWrite`, `MailboxSettings.Read`
+   - `Calendars.ReadWrite`
+   - `Contacts.ReadWrite`, `People.Read`
+   - `Files.ReadWrite`
+   - `User.Read`, `offline_access`
+5. (Recomendado em tenant corporativo) Ainda em **API permissions**, clique **Grant admin consent** para pré-aprovar os escopos pra todo mundo do tenant.
+6. **Não crie client secret nem certificado** — o MCP é Public Client Application; secret não é usado e não deve existir.
+7. Na aba **Overview**, copie o **Application (client) ID** e o **Directory (tenant) ID**.
+8. Reconfigure o MCP apontando pro seu app (exemplo Claude Code):
+
+   ```bash
+   claude mcp remove outlook
+   claude mcp add outlook -s user \
+     -e OUTLOOK_TIMEZONE=America/Sao_Paulo \
+     -e OUTLOOK_CLIENT_ID=SEU_CLIENT_ID \
+     -e OUTLOOK_TENANT_ID=SEU_TENANT_ID \
+     -- npx -y @expertintegrado/outlook-mcp
+   ```
+
+9. Reinicie o cliente MCP, apague o token antigo (se existir) e peça "autentica no Outlook MCP" de novo.
 
 ---
 
