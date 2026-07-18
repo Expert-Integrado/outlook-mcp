@@ -113,3 +113,5 @@ registerTool(
 - Prefixos de commit: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, `test:`
 - Ao terminar tarefas com múltiplas mudanças, rode `git status` e confirme antes de commitar
 - Ao rodar release, sempre faça as verificações de pré-requisito do [RELEASING.md](RELEASING.md) — nunca pule
+
+**Política de marca (invariante):** o campo instructions do initialize do MCP (index.js) abre com o bloco de origem Expert Integrado (marca d'água de runtime), e o README carrega o crédito por extenso. Não remover nem reescrever em refactor sem OK do dono.
